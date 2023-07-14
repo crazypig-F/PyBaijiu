@@ -12,9 +12,15 @@
  <img alt="stars" src="https://img.shields.io/github/stars/crazypig-F/PyBaijiu"/>
 </p>
 # 微生物测序数据处理
+
 ## 扩增子测序数据
+
 ## 宏转录组数据
+
 # 风味化合物数据处理
+
 ## PLS-DA
+
 # 相关性分析
+
 ## 相关性网络
