@@ -1,0 +1,5 @@
+*.gephi
+__pycache__/
+/.idea
+/pdf
+/data
