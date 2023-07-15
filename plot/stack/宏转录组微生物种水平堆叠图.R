@@ -10,7 +10,7 @@ data$Samples <- fct_inorder(data$Samples)
 COLOR <- COLOR[1:nlevels(data$Strains) - 1]
 COLOR <- append(COLOR, COLOR_END)
 g <- ggplot(data, aes(x = Samples, y = Values, fill = Strains)) +
-  geom_col(position = 'stack', width = 0.9) + # stack：堆叠图
+  geom_col(position = 'stack', width = 0.9) +
   scale_fill_manual(values = COLOR) +
   scale_y_continuous(limits = c(-.1, 100.1), expand = c(0, 0)) +
   scale_x_discrete(expand = c(0, 0)) +
