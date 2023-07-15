@@ -7,4 +7,4 @@ COLOR <- c(
     "#605399", "#D562BE", "#1556C3", "#B56748"
 )
 
-COLOR_END <- "#9E9E9E"
+# COLOR_END <- "#9E9E9E"
