@@ -27,3 +27,12 @@ class SheetOperator:
         :return: None
         """
         sheet.to_csv(save_path, index=index)
+
+    @classmethod
+    def sub_samples(cls, sheet, name_list):
+        """选取部分样品
+        :param sheet: 输入的表格
+        :param name_list: 需要的样品名称列表
+        :return: 选取的表格
+        """
+        return sheet.loc[name_list, :]
