@@ -34,6 +34,7 @@ class BaseStatistics:
         self.sheet = self.sheet.loc[taxonomy.apply(lambda x: len(x) >= self.taxonomy_type), :].copy()
         self.sheet[self.tax_col_name] = self.sheet[self.tax_col_name].apply(lambda x: x.split(";")).apply(
             lambda x: x[self.taxonomy_type].strip())
+
         self.sheet = self.sheet.groupby([self.tax_col_name]).sum()
 
     def get_top(self, top_k):
@@ -46,13 +47,3 @@ class BaseStatistics:
         sheet_top = self.sheet.loc[top[:top_k].index, :]
         sheet_top.loc["Others", :] = self.sheet.loc[top[top_k:].index, :].sum()
         return sheet_top.T
-
-    def get_mean(self):
-        """对有平行样的数据取平均值，样品的命名必须前n个字符相同，最后一个字符用于区分平行样
-            例如SampleA，SampleB，SampleC
-        :return: 取平均值之后的数据组成的数据表
-        """
-        sheet_mean = self.sheet.T
-        sheet_mean["name"] = [i[:-1] for i in sheet_mean.index]
-        sheet_mean = sheet_mean.groupby(by="name").mean().astype("int")
-        return sheet_mean
