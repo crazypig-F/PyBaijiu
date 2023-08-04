@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 class SheetOperator:
     @classmethod
     def get_group(cls, sheet, group):
@@ -36,3 +39,12 @@ class SheetOperator:
         :return: 选取的表格
         """
         return sheet.loc[name_list, :]
+
+    @classmethod
+    def merge(cls, sheet1, sheet2):
+        """合并两个表
+        :param sheet1: 输入的表格
+        :param sheet2: 输入的表格
+        :return: 合并的表格
+        """
+        return pd.merge(left=sheet1, right=sheet2, on="name")

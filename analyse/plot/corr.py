@@ -86,7 +86,7 @@ class CorrNetworkGraph:
         color_list = ["node1" for i in self.sheet1.columns if i in source_list or i in target_list] + \
                      ["node2" for i in self.sheet2.columns if i in source_list or i in target_list]
         result = {
-            "Id": list(range(len(label_list))),
+            "Id": label_list,
             "Label": label_list,
             "Color": color_list
         }
